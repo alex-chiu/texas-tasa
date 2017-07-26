@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html id = "sponsors">
+<style>
+.thanks{
+	text-align: center;
+	font-weight: bold;
+	font-size: 50px;
+	color: white;
+	z-index: 5;
+	background-color: #4682b4;
+	border: 5px solid #DF272C;
+	opacity: .95;
+}
+
+.emphasize{
+	color:#DF272C;	
+	text-transform: uppercase;
+}
+
+#border{
+	border: 5px solid #ff8080;
+}
+</style>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Taiwanese American Students Association</title>
+	<link rel="stylesheet" href="../public/global.css">
+	<link rel="shortcut icon" href="../public/favicon.ico">
+</head>
+<body>
+	<!-- HEADER STARTS HERE -->
+	<header>
+		<div class="wrap clearfix">
+			<a id="logo" href="/">
+				<img src="../images/logo/logo_inverse_2015.png" width="48px" height="48px">
+				<span class="highlight">Taiwanese <span class="white">American</span> Students <span class="white">Association</span> </span>
+			</a>
+			<ul class="main-nav">
+				<li><a class="nav-item" href="../views/about.html">About</a></li>
+				<li><a class="nav-item" href="../views/calendar.html">Calendar</a></li>
+				<li><a class="nav-item" href="../views/events.html">Events</a></li>
+				<li><a class="nav-item" href="../views/alumni.html">Alumni</a></li>
+				<li><a class="nav-item" href="../views/family.html">Family</a></li>
+				<li><a class="nav-item" href="../views/food.html">Food</a></li>
+			</ul>
+		</div>
+	</header>
+		<!-- BODY CONTENT STARTS HERE -->
+	<div class="sponsorbody load" id="main-container">
+		<div class="thanks">
+			Thanks to all our <span class = "emphasize">sponsors</span> that helped make<br><span class = "emphasize">Taste of Taiwan</span><br>a success!
+		</div>
+		
+		<div class="logo-container">
+			<div class="table clearfix">
+				<div class="col-30">
+					<div class="logo-list-item">
+						<a href="http://www.universitycoop.com/">
+							<img src="../images/logo/coop.jpg">
+						</a>
+					</div>
+					<div class="logo-list-item">
+						<a href="http://www.utsenate.org/">
+							<img src="../images/logo/senate.jpg">
+						</a>
+					</div>
+				</div>
+				<div class="col-30">
+					<div class="logo-list-item">
+						<a href="https://www.facebook.com/utexascee">
+							<img src="../images/logo/ee.jpg">		
+						</a>					
+					</div>
+
+					<div class="logo-list-item">
+						<a href="http://www.utexas.edu/diversity/">
+							<img src="../images/logo/ddoc.jpg">
+						</a>
+					</div>
+				</div>
+				<div class="col-30">
+					<div class="logo-list-item">
+						<a href="http://utsg.org/">
+							<img src="../images/logo/sg.jpg">
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+		
+	<!-- FOOTER STARTS HERE -->
+	<footer>
+		<div class="wrap clearfix table">
+			<p class="footer-text">Taiwanese American Students Association 2015-2017</p>
+			<div class="social-icon">
+				<a href="https://twitter.com/uttasa">
+					<img src="../images/logo/twitter.png" alt="Twitter">
+				</a>
+				<a href="https://www.facebook.com/texastasa">
+					<img src="../images/logo/facebook.png" alt="Facebook">
+				</a>
+				<a href="http://www.youtube.com/channel/UC4tZCO4Es9JZaL4bm9lQPEw">
+					<img src="../images/logo/youtube.png" alt="Youtube">
+				</a>
+				<a href="http://instagram.com/uttasa">
+					<img src="../images/logo/instagram.png" alt="Instagram">
+				</a>
+			</div>
+		</div>
+	</footer>
+</body>
+<script type="text/javascript">
+	window.onload = function (){
+		var p = document.getElementById("main-container");
+		p.className = p.className + "ed";
+		console.log("done")
+	}
+</script>
+</html>
