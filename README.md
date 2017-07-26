@@ -21,3 +21,4 @@ Alan Ma - https://github.com/wolfier
 
 Brandon Shang - https://github.com/bcshang
 
+Alan Cooper - https://github.com/AlanCooper509
