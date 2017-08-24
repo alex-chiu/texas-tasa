@@ -36,6 +36,21 @@
 	position:absolute;
 	display:none;
 }
+
+/** Featured Video **/
+#video {
+	border-radius: 10px;
+	border: 3px solid black; 
+	display: inline-block;
+}
+
+#vidComments {
+	display: inline-block;
+	vertical-align: top;
+	padding-left: 5%;
+	width: 30%;
+	margin-right: -10%;
+}
 </style>
 </head>
 
@@ -91,14 +106,16 @@
 
 						<!-- Featured Video-->
 						<div class="section">Featured <span class="highlight"><a href="http://www.youtube.com/channel/UC4tZCO4Es9JZaL4bm9lQPEw">Video</a></span></div>
-						<p style="display: inline-block; width: 30%; vertical-align: top;"> TASA's Annual Taste of Taiwan was a huge success this year, with amazing food, games, and performances! Thanks to everybody who contributed, and everyone who stopped by :)<br><br><br><br><br><br>
 
-						<font size="-1">Video Credit: Lillianne Le, Kenneth Hinh<br>
-						- Media JOs [2016-2017]</font></p>
-						<iframe width="560" height="315" src="https://www.youtube.com/embed/bSWHQX3Xec8" frameborder="0" allowfullscreen 
-						style="border: 3px solid black; display: inline-block;"></iframe>
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/bSWHQX3Xec8" frameborder="0" allowfullscreen id="video"></iframe>
 
-
+						<div id="vidComments">
+							<h2 class="small-font light highlight"><strong><a href="views/tot.html">Taste of Taiwan</a></strong></h2>
+							<p> TASA's Annual Taste of Taiwan was a huge success this year, with amazing food, games, and performances! Thanks to everybody who contributed, and everyone who stopped by :)<br><br><br><br><br>
+							<font size="-1">Video Credit: Lillianne Le, Kenneth Hinh <br>
+							- Media JOs [2016-2017]</font></p>
+						</div>
+						<br><br>
 
 						<div class="section">Upcoming <span class="highlight"><a href="views/events.html">Events</a></span></div>
 						
@@ -222,21 +239,20 @@
 
 		<!-- FOOTER STARTS HERE -->
 		<footer>
-				<p class="footer-text">Taiwanese American Students Association 2015-2017</p>
-				<div class="social-icon">
-					<a href="https://twitter.com/uttasa">
-						<img src="images/logo/twitter.png" alt="Twitter">
-					</a>
-					<a href="https://www.facebook.com/texastasa">
-						<img src="images/logo/facebook.png" alt="Facebook">
-					</a>
-					<a href="http://www.youtube.com/channel/UC4tZCO4Es9JZaL4bm9lQPEw">
-						<img src="images/logo/youtube.png" alt="Youtube">
-					</a>
-					<a href="http://instagram.com/uttasa">
-						<img src="images/logo/instagram.png" alt="Instagram">
-					</a>
-				</div>
+			<p class="footer-text">Taiwanese American Students Association 2015-2017</p>
+			<div class="social-icon">
+				<a href="https://twitter.com/uttasa">
+					<img src="images/logo/twitter.png" alt="Twitter">
+				</a>
+				<a href="https://www.facebook.com/texastasa">
+					<img src="images/logo/facebook.png" alt="Facebook">
+				</a>
+				<a href="http://www.youtube.com/channel/UC4tZCO4Es9JZaL4bm9lQPEw">
+					<img src="images/logo/youtube.png" alt="Youtube">
+				</a>
+				<a href="http://instagram.com/uttasa">
+					<img src="images/logo/instagram.png" alt="Instagram">
+				</a>
 			</div>
 		</footer>
 	</div>
