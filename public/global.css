@@ -544,9 +544,11 @@ footer .social-icon img{
 	font-size: 40px;
 	text-align: center;
 	padding-top: 10px;
+	padding-bottom: 15px;
 	margin-bottom: 40px;
-	color: white;
-    background-color: black;
+	color: #FFFFFF;
+    background-color: #000000;
+    border-radius: 8px;
 }
 
 .about .row-container .blurb {
