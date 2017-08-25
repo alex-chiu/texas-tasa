@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Taiwanese American Students Association | Achievements</title>
+	<link rel="stylesheet" href="../public/global.css">
+	<link rel="shortcut icon" href="../public/favicon.ico">
+<style>
+.blackhead{
+	display: block;
+	margin: 30px 0;
+	line-height: 1;
+	color: #000000;
+	font-size: 50px;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.redhead{
+	display: block;
+	margin: 30px 0;
+	line-height: 1;
+	color: #DF272C;
+	font-size: 50px;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.indents{
+	width: 90%;
+}
+
+.box{
+	display: inline-block;
+	width: 45%;
+	border: 3px solid #000000;
+	margin-left: 8px;
+	margin-right: 8px;
+	padding: 0px 10px 10px 10px;
+}
+
+.topic{
+	color: #000000;
+	font-weight: bold;
+	font-size: 24px;
+}
+
+.status{
+	font-style: italic;
+}
+</style>
+</head>
+
+<!-- RECORD USER CLICKS & CHANGE PAGES TO LOADED -->
+<script src="../js/Achievements/trackers.js"></script>
+<script src="../js/Achievements/cookies.js"></script>
+
+<body>
+	<div class="main-container">
+
+		<!-- HEADER STARTS HERE -->
+		<header>
+			<div class="wrap clearfix">
+				<a id="logo" href="/">
+					<img src="../images/logo/logo_inverse_2015.png" width="48px" height="48px">
+					<span class="highlight">Taiwanese <span class="white">American</span> Students <span class="white">Association</span> </span>
+				</a>
+				<ul class="main-nav">
+					<li><a class="nav-item" href="../views/about.html">About</a></li>
+					<li><a class="nav-item" href="../views/calendar.html">Calendar</a></li>
+					<li><a class="nav-item" href="../views/events.html">Events</a></li>
+				<!--<li><a class="nav-item" href="../views/alumni.html">Alumni</a></li>-->
+					<li><a class="nav-item" href="../views/family.html">Family</a></li>
+					<li><a class="nav-item" href="../views/food.html">Food</a></li>
+				</ul>
+			</div>
+		</header>
+
+		<!-- BODY CONTENT STARTS HERE -->
+		<div class="body-content wrap clearfix home load" id="main-container">
+			<div class="overview-container">
+				<div class="redhead">Achievement List</div>
+
+				<!-- ACHIEVEMENT #1: CLICKS -->
+				<div class="box">
+					<h1 class="topic">Click 10 Times</h1>
+					<p class="status">Currently: <span id="clicks"><script type="text/javascript">getClicks();</script></span></p>
+				</div>
+
+				<!-- ACHIEVEMENT #2: VISITS -->
+				<div class="box">
+					<h1 class="topic">Visit Achievement List 10 Times</h1>
+					<p class="status"><script type="text/javascript">VisitCounter();</script></p>
+				</div>
+			</div>
+		</div>
+
+		<!-- FOOTER STARTS HERE -->
+		<footer>
+			<div class="wrap clearfix table">
+				<p class="footer-text">Taiwanese American Students Association 2015-2017</p>
+				<div class="social-icon">
+					<a href="https://twitter.com/uttasa">
+						<img src="../images/logo/twitter.png" alt="Twitter">
+					</a>
+					<a href="https://www.facebook.com/texastasa">
+						<img src="../images/logo/facebook.png" alt="Facebook">
+					</a>
+					<a href="http://www.youtube.com/channel/UC4tZCO4Es9JZaL4bm9lQPEw">
+						<img src="../images/logo/youtube.png" alt="Youtube">
+					</a>
+					<a href="http://instagram.com/uttasa">
+						<img src="../images/logo/instagram.png" alt="Instagram">
+					</a>
+				</div>
+			</div>
+		</footer>
+	</div>
+</body>
+
+
+
+<script>
+	window.onload = function (){
+		var p = document.getElementById("main-container");
+		p.className = p.className + "ed"; //change from "load" to "loaded"
+		console.log("done");
+
+		//Run My Click Counter!
+		document.getElementsByTagName("body")[0].onclick = recordClick;
+	}
+</script>
+
+</html>
