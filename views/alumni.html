@@ -5,6 +5,10 @@
 	<title>Taiwanese American Students Association | Alumni</title>
 	<link rel="stylesheet" href="../public/global.css">
 	<link rel="shortcut icon" href="../public/favicon.ico">
+
+	<!-- RECORD USER ACHIEVEMENTS -->
+	<script src="../js/Achievements/trackers.js"></script>
+	<script src="../js/Achievements/cookies.js"></script>		
 </head>
 <body>
 	<div class="main-container" id="top">
@@ -83,7 +87,12 @@
 	window.onload = function (){
 		var p = document.getElementById("main-container");
 		p.className = p.className + "ed";
-		console.log("done")
+		console.log("done");
+
+		//Run My Click Counter!
+		document.getElementsByTagName("body")[0].onclick = recordClick;
+		//Record Page Visit!
+		recordVisit();		
 	}
 </script>
 </html>

@@ -8,10 +8,10 @@
 <style>
 .blackhead{
 	display: block;
-	margin: 30px 0;
+	margin: 30px 0px 6px 0px;
 	line-height: 1;
 	color: #000000;
-	font-size: 50px;
+	font-size: 40px;
 	font-weight: bold;
 	text-transform: uppercase;
 }
@@ -31,12 +31,19 @@
 }
 
 .box{
-	display: inline-block;
-	width: 45%;
+	width: 80%;
 	border: 3px solid #000000;
-	margin-left: 8px;
-	margin-right: 8px;
+	border-radius: 10px;
+	margin: 5px 0px 5px 40px;
 	padding: 0px 10px 10px 10px;
+}
+
+.complete{
+	background-color: #32CD32;
+	-webkit-transition: background-color .5s ease-in;
+	-moz-transition: background-color .5s ease-in;
+	-o-transition: background-color .5s ease-in;
+	transition: background-color .5s ease-in;
 }
 
 .topic{
@@ -51,12 +58,12 @@
 </style>
 </head>
 
-<!-- RECORD USER CLICKS & CHANGE PAGES TO LOADED -->
+<!-- RECORD USER ACHIEVEMENTS -->
 <script src="../js/Achievements/trackers.js"></script>
 <script src="../js/Achievements/cookies.js"></script>
 
 <body>
-	<div class="main-container">
+	<div class="main-container" id="track">
 
 		<!-- HEADER STARTS HERE -->
 		<header>
@@ -81,19 +88,75 @@
 			<div class="overview-container">
 				<div class="redhead">Achievement List</div>
 
-				<!-- ACHIEVEMENT #1: CLICKS -->
-				<div class="box">
-					<h1 class="topic">Click 10 Times</h1>
-					<p class="status">Currently: <span id="clicks"><script type="text/javascript">getClicks();</script></span></p>
-				</div>
+				<!-- ACHIEVEMENT #3: EXPLORE -->
 
+				<!-- ACHIEVEMENT #1: CLICKS -->
+				<div>
+					<div class="blackhead">>> Clicker Happy [<span id="clickAchievements"></span>/5]</div>
+					<!-- 10 Clicks -->
+					<div class="box" id = "1.1">
+						<h1 class="topic">Click 10 Times&ensp;<span style="font-weight: normal; font-size: 20px">(Anything - Any TASA Page)</span></h1>
+						<p class="status">Currently: <span id="clicks10"><script type="text/javascript">getClicks();</script></span> Clicks/Taps</p>
+					</div>
+					<!-- 50 Clicks -->
+					<div class="box" id = "1.2">
+						<h1 class="topic">Click 50 Times</h1>
+						<p class="status">Currently: <span id="clicks50"><script type="text/javascript">getClicks();</script></span> Clicks/Taps</p>
+					</div>
+					<!-- 100 Clicks -->
+					<div class="box" id = "1.3">
+						<h1 class="topic">Click 100 Times</h1>
+						<p class="status">Currently: <span id="clicks100"><script type="text/javascript">getClicks();</script></span> Clicks/Taps</p>
+					</div>
+					<!-- 500 Clicks -->
+					<div class="box" id = "1.4">
+						<h1 class="topic">Click 500 Times</h1>
+						<p class="status">Currently: <span id="clicks500"><script type="text/javascript">getClicks();</script></span> Clicks/Taps</p>
+					</div>
+					<!-- 1000 Clicks -->
+					<div class="box" id = "1.5">
+						<h1 class="topic">Click 1000 Times</h1>
+						<p class="status">Currently: <span id="clicks1000"><script type="text/javascript">getClicks();</script></span> Clicks/Taps</p>
+					</div>
+				</div>
 				<!-- ACHIEVEMENT #2: VISITS -->
-				<div class="box">
-					<h1 class="topic">Visit Achievement List 10 Times</h1>
-					<p class="status"><script type="text/javascript">VisitCounter();</script></p>
+				<div>
+				<script type="text/javascript">recordVisit();</script>
+					<div class="blackhead">>> Page Surfer [<span id="visitsAchievements"></span>/5]</div>
+					<!-- 5 Page Visits -->
+					<div class="box" id = "2.1">
+						<h1 class="topic">Visit a Total of 10 TASA Pages</h1>
+						<p class="status"><script type="text/javascript">getVisits();</script></p>
+					</div>
+
+					<!-- 10 Page Visits -->
+					<div class="box" id = "2.2">
+						<h1 class="topic">Visit a Total of 25 TASA Pages</h1>
+						<p class="status"><script type="text/javascript">getVisits();</script></p>
+					</div>
+
+					<!-- 25 Page Visits -->
+					<div class="box" id = "2.3">
+						<h1 class="topic">Visit a Total of 50 TASA Pages</h1>
+						<p class="status"><script type="text/javascript">getVisits();</script></p>
+					</div>
+
+					<!-- 50 Page Visits -->
+					<div class="box" id = "2.4">
+						<h1 class="topic">Visit a Total of 100 TASA Pages</h1>
+						<p class="status"><script type="text/javascript">getVisits();</script></p>
+					</div>
+
+					<!-- 100 Page Visits -->
+					<div class="box" id = "2.5">
+						<h1 class="topic">Visit a Total of 500 TASA Pages</h1>
+						<p class="status"><script type="text/javascript">getVisits();</script></p>
+					</div>
 				</div>
 			</div>
 		</div>
+
+		<script type="text/javascript">checkCompleted();</script>
 
 		<!-- FOOTER STARTS HERE -->
 		<footer>

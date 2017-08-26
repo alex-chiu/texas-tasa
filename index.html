@@ -6,6 +6,11 @@
 	<link rel="stylesheet" href="public/global.css">
 	<link rel="shortcut icon" href="public/favicon.ico">
 
+
+<!-- RECORD USER ACHIEVEMENTS -->
+<script src="js/Achievements/trackers.js"></script>
+<script src="js/Achievements/cookies.js"></script>
+
 <style>
 /***Home Slide Show Style***/
 #container{
@@ -297,5 +302,10 @@
                            callback: function(data, tabletop) { printstuff(data); },
                            simpleSheet: true } )
         }
+
+		//Run My Click Counter!
+		document.getElementsByTagName("body")[0].onclick = recordClick;
+		//Record Page Visit!
+		recordVisit();
 </script>
 </html>
