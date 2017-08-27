@@ -27,8 +27,12 @@ function recordClick() {
 		if(numclicks >= 50){ document.getElementById("1.2").classList.add("complete"); document.getElementById("clickAchievements").innerHTML = 2;}
 		if(numclicks >= 100){ document.getElementById("1.3").classList.add("complete"); document.getElementById("clickAchievements").innerHTML = 3;}
 		if(numclicks >= 500){ document.getElementById("1.4").classList.add("complete"); document.getElementById("clickAchievements").innerHTML = 4;}
-		if(numclicks >= 1000){ document.getElementById("1.5").classList.add("complete"); document.getElementById("clickAchievements").innerHTML = 5;}
-
+		if(numclicks >= 1000){ 
+			document.getElementById("1.5").classList.add("complete");
+			document.getElementById("clickAchievements").innerHTML = 5;
+			document.getElementById("1").innerHTML = "&#128504;";
+			document.getElementById("1").classList.add("checkmark");
+		}
 	}
 	setCookie("clicks", numclicks, expdate, "/");
 }
@@ -162,6 +166,50 @@ function getTabs() {
 	}
 }
 
+function recordApply() {
+	/* Called within innerHTML upon page load:
+	/* <script type="text/javascript">recordApply();</script>
+	/* On landing (apply.html), updates corresponding cookie with string "true"
+	*/
+	var apply = true;
+	var expdate = new Date ();
+	expdate.setTime (expdate.getTime() + (24 * 60 * 60 * 1000*365));
+	setCookie("applyTab", apply, expdate, "/");
+}
+
+function getApply() {
+	var apply = getCookie("applyTab");
+	if (apply == "") { 
+		document.getElementById("applyTab").innerHTML = "incomplete";
+	} else {
+		document.getElementById("applyTab").innerHTML = "Done!";
+	}
+}
+
+function recordOfficer(x) {
+	/* Called within innerHTML upon page load:
+	/* <script type="text/javascript">recordOfficer([Character Input, A-K]);</script>
+	/* On hover, triggers update of corresponding cookie with string "true";
+	/* Input corresponds to letter assigned to each officer position.
+	*/
+	var officerx = true;
+	var expdate = new Date ();
+	expdate.setTime (expdate.getTime() + (24 * 60 * 60 * 1000*365));
+	setCookie("officer" + x, officerx, expdate, "/");
+}
+
+function getOfficers() {
+	var officers = 0;
+	var x = "A";
+	var cookie;
+	while(x!="L"){
+		cookie = getCookie("officer" + x);
+		if(cookie != ""){ officers++; }
+		x = String.fromCharCode(x.charCodeAt(0) + 1);
+	}
+	document.getElementById("officerCount").innerHTML = officers;
+}
+
 function checkCompleted(){
 	/* Called by achievements.html during page load
 	/* Sets BG color to Green for each Achievement upon completion:
@@ -183,6 +231,9 @@ function checkCompleted(){
 		myID = document.getElementsByClassName("panel clicks");
 		myID[0].style.display = "block";
 		myID[0].style.opacity = "1";
+	} else {
+		document.getElementById("1").innerHTML = "&#128504;";
+		document.getElementById("1").classList.add("checkmark");
 	}
 	document.getElementById("clickAchievements").innerHTML = checkpoint;
 	
@@ -194,11 +245,14 @@ function checkCompleted(){
 	if(cval >= 50){ document.getElementById("2.3").classList.add("complete"); checkpoint++;}
 	if(cval >= 100){ document.getElementById("2.4").classList.add("complete"); checkpoint++;}
 	if(cval >= 500){ document.getElementById("2.5").classList.add("complete"); checkpoint++;}
-	/* DISPLAY CLICKER HAPPY ACHIEVEMENT IF IT IS INCOMPLETE; INTERACTS WITH COLLAPSIBLE ACCORDION CSS*/
+	/* DISPLAY PAGE SURFER ACHIEVEMENT IF IT IS INCOMPLETE; INTERACTS WITH COLLAPSIBLE ACCORDION CSS*/
 	if(checkpoint < 5){
 		myID = document.getElementsByClassName("panel counts");
 		myID[0].style.display = "block";
 		myID[0].style.opacity = "1";
+	} else {
+		document.getElementById("2").innerHTML = "&#128504;";
+		document.getElementById("2").classList.add("checkmark");
 	}
 	document.getElementById("visitsAchievements").innerHTML = checkpoint;
 
@@ -221,7 +275,34 @@ function checkCompleted(){
 		myID = document.getElementsByClassName("panel explorer");
 		myID[0].style.display = "block";
 		myID[0].style.opacity = "1";
+	} else {
+		document.getElementById("3").innerHTML = "&#128504;";
+		document.getElementById("3").classList.add("checkmark");
 	}
 	document.getElementById("tabsAchievements").innerHTML = checkpoint;
 
+	//Aspire
+	checkpoint = 0;
+	/* Visit Apply Page */
+	cval = getCookie("applyTab");
+	if(cval != ""){ document.getElementById("4.1").classList.add("complete"); checkpoint++;}
+	/* Officer Hovers */
+	var officers = 0;
+	var x = "A";
+	while(x!="L"){
+		cval = getCookie("officer" + x);
+		if(cval != ""){ officers++; }
+		x = String.fromCharCode(x.charCodeAt(0) + 1);
+	}
+	if(officers == 11){ document.getElementById("4.2").classList.add("complete"); checkpoint++;}
+	/* DISPLAY ASPIRING OFFICER ACHIEVEMENT IF IT IS INCOMPLETE; INTERACTS WITH COLLAPSIBLE ACCORDION CSS*/
+	if(checkpoint < 2){
+		myID = document.getElementsByClassName("panel aspire");
+		myID[0].style.display = "block";
+		myID[0].style.opacity = "1";
+	} else {
+		document.getElementById("4").innerHTML = "&#128504;";
+		document.getElementById("4").classList.add("checkmark");
+	}
+	document.getElementById("aspireAchievements").innerHTML = checkpoint;
 }

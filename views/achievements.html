@@ -63,6 +63,10 @@ div.panel {
 	transition: background-color .5s ease-in;
 }
 
+.checkmark{
+	color: #32CD32;
+}
+
 .topic{
 	color: #000000;
 	font-weight: bold;
@@ -107,43 +111,60 @@ div.panel {
 				<div class="redhead">Achievement List</div>
 
 				<!-- ACHIEVEMENT #3: EXPLORE -->
-				<button class="accordion">>> Explorer [<span id="tabsAchievements"></span>/6]</button>
+				<button class="accordion"><span id ="3">>></span> Explorer [<span id="tabsAchievements"></span>/6]</button>
 				<div class="panel explorer">
 					<!-- Home Page -->
 					<div class="box" id = "3.1">
-						<h1 class="topic">Visit the <span style=""><a href="../index.html">>HOME<</a></span> Page</h1>
+						<h1 class="topic">Visit the <a href="../index.html">>HOME<</a> Page</h1>
 						<p class="status">Status: <span id="homeTab"></span></p>
 					</div>
 					<!-- About Page -->
 					<div class="box" id = "3.2">
-						<h1 class="topic">Visit the <span style=""><a href="about.html">>ABOUT<</a></span> Page</h1>
+						<h1 class="topic">Visit the <a href="about.html">>ABOUT<</a> Page</h1>
 						<p class="status">Status: <span id="aboutTab"></span></p>
 					</div>
 					<!-- Calendar Page -->
 					<div class="box" id = "3.3">
-						<h1 class="topic">Visit the <span style=""><a href="calendar.html">>CALENDAR<</a></span> Page</h1>
+						<h1 class="topic">Visit the <a href="calendar.html">>CALENDAR<</a> Page</h1>
 						<p class="status">Status: <span id="calendarTab"></span></p>
 					</div>
 					<!-- Events Page -->
 					<div class="box" id = "3.4">
-						<h1 class="topic">Visit the <span style=""><a href="events.html">>EVENTS<</a></span> Page</h1>
+						<h1 class="topic">Visit the <a href="events.html">>EVENTS<</a> Page</h1>
 						<p class="status">Status: <span id="eventsTab"></span></p>
 					</div>
 					<!-- Family Page -->
 					<div class="box" id = "3.5">
-						<h1 class="topic">Visit the <span style=""><a href="family.html">>FAMILY<</a></span> Page</h1>
+						<h1 class="topic">Visit the <a href="family.html">>FAMILY<</a> Page</h1>
 						<p class="status">Status: <span id="familyTab"></span></p>
 					</div>
 					<!-- Food Page -->
 					<div class="box" id = "3.6">
-						<h1 class="topic">Visit the <span style=""><a href="food.html">>FOOD<</a></span> Page</h1>
+						<h1 class="topic">Visit the <a href="food.html">>FOOD<</a> Page</h1>
 						<p class="status">Status: <span id="foodTab"></span></p>
 					</div>
 				</div>
 				<script type="text/javascript">getTabs();</script>
 
+				<!-- ACHIEVEMENT #4: ASPIRE-->
+				<button class="accordion"><span id ="4">>></span> Aspiring Officer [<span id="aspireAchievements"></span>/2]</button>
+				<div class="panel aspire">
+					<!-- Apply Page Visited -->
+					<div class="box" id = "4.1">
+						<h1 class="topic">Learn about JO Responsibilities&ensp;<span style="font-weight: normal; font-size: 20px">(Find - APPLY Page)</span></h1>
+						<p class="status">Progress: <span id="applyTab"></span></p>
+					</div>
+					<!-- Officer Counter -->
+					<div class="box" id = "4.2">
+						<h1 class="topic">Hover-Over/Tap Every TASA Officer</h1>
+						<p class="status">Progress: <span id="officerCount"></span>/11</p>
+					</div>
+				</div>
+				<script type="text/javascript">getOfficers();</script>
+				<script type="text/javascript">getApply();</script>
+
 				<!-- ACHIEVEMENT #1: CLICKS -->
-				<button class="accordion">>> Clicker Happy [<span id="clickAchievements"></span>/5]</button>
+				<button class="accordion"><span id ="1">>></span> Clicker Happy [<span id="clickAchievements"></span>/5]</button>
 				<div class="panel clicks">
 					<!-- 10 Clicks -->
 					<div class="box" id = "1.1">
@@ -174,7 +195,7 @@ div.panel {
 
 				<!-- ACHIEVEMENT #2: VISITS -->
 				<script type="text/javascript">recordVisit();</script>
-				<button class="accordion">>> Page Surfer [<span id="visitsAchievements"></span>/5]</button>
+				<button class="accordion"><span id ="2">>></span> Page Surfer [<span id="visitsAchievements"></span>/5]</button>
 				<div class="panel counts">
 					<!-- 10 Page Visits -->
 					<div class="box" id = "2.1">

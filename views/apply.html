@@ -7,8 +7,8 @@
 	<link rel="shortcut icon" href="../public/favicon.ico">
 
 	<!-- RECORD USER ACHIEVEMENTS -->
-	<script src="js/Achievements/trackers.js"></script>
-	<script src="js/Achievements/cookies.js"></script>
+	<script src="../js/Achievements/trackers.js"></script>
+	<script src="../js/Achievements/cookies.js"></script>
 </head>
 <body>
 	<div class="main-container" id="top">
@@ -169,8 +169,8 @@
 					</div>
 				</div>
 			</div>
-
 		</div>
+
 			<!-- FOOTER STARTS HERE -->
 		<footer>
 			<div class="wrap clearfix table">
@@ -193,16 +193,21 @@
 		</footer>
 	</div>
 </body>
+
+<script src="../js/jquery-2.1.4.js"></script>
 <script>
 	window.onload = function (){
+		
 		var p = document.getElementById("main-container");
 		p.className = p.className + "ed";//change from "load" to "loaded"
 		console.log("done");
-
+		
 		//Run My Click Counter!
 		document.getElementsByTagName("body")[0].onclick = recordClick;
 		//Record Page Visit!
 		recordVisit();
+		//Record Tab Visit!
+		recordApply();
 	}
 </script>
 </html>
