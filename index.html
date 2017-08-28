@@ -124,7 +124,22 @@
 						<br><br>
 
 						<div class="section">Upcoming <span class="highlight"><a href="views/events.html">Events</a></span></div>
-						
+
+						<!-- Event #0: TASA Achievements -->
+						<div class="overview-list-item clearfix" id="achievementList">
+							<img src="images/icon/barchart.png">
+							<h2 class="title"><a href = "views/achievements.html">
+								TASA Achievements is LIVE!<br></a>
+								<span class="small-font light highlight" style="letter-spacing: -1px;">
+									@texastasa.com/views/achievements.html
+								</span>
+							</h2>
+							<p class="subtext">
+							Track your progress, and see if you have what it takes to EARN them all!<br>
+							Look <span class="light highlight"><strong><a href = "views/achievements.html">HERE</a></strong></span> for more information!<br><br>
+							</p>
+						</div>
+	
 						<!-- Event #1: JO Openings -->
 						<div class="overview-list-item clearfix" id="jo">
 							<img src="images/icon/trophy.png">
@@ -261,16 +276,16 @@
 				<p class="footer-text">Taiwanese American Students Association 2015-2017</p>
 				<div class="social-icon">
 					<a href="https://www.facebook.com/texastasa">
-						<img onclick="recordMedia('fb');" src="../images/logo/facebook.png" alt="Facebook">
+						<img onclick="recordMedia('fb');" src="images/logo/facebook.png" alt="Facebook">
 					</a>
 					<a href="http://instagram.com/uttasa">
-						<img onclick="recordMedia('ig');" src="../images/logo/instagram.png" alt="Instagram">
+						<img onclick="recordMedia('ig');" src="images/logo/instagram.png" alt="Instagram">
 					</a>
 					<a href="http://www.youtube.com/channel/UC4tZCO4Es9JZaL4bm9lQPEw">
-						<img onclick="recordMedia('yt');" src="../images/logo/youtube.png" alt="Youtube">
+						<img onclick="recordMedia('yt');" src="images/logo/youtube.png" alt="Youtube">
 					</a>
 					<a href="https://twitter.com/uttasa">
-						<img onclick="recordMedia('tw');" src="../images/logo/twitter.png" alt="Twitter">
+						<img onclick="recordMedia('tw');" src="images/logo/twitter.png" alt="Twitter">
 					</a>
 				</div>
 			</div>
@@ -321,5 +336,9 @@
 		recordVisit();
 		//Record Tab Visit!
 		recordTab();
+		//Record Home Page Visits!
+		recordHome();
+		//Record Time/Day of Visit!
+		recordTimes();
 </script>
 </html>

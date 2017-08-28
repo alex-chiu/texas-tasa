@@ -108,7 +108,7 @@ div.panel {
 		<!-- BODY CONTENT STARTS HERE -->
 		<div class="body-content wrap clearfix home load" id="main-container">
 			<div class="overview-container">
-				<div class="redhead">Achievement List</div>
+				<div class="redhead">Achievement List: [<span id="current"></span>/35]</div>
 
 				<!-- ACHIEVEMENT #3: EXPLORE -->
 				<button class="accordion"><span id ="3">>></span> Explorer [<span id="tabsAchievements"></span>/6]</button>
@@ -206,6 +206,37 @@ div.panel {
 				<script type="text/javascript">getITASA();</script>
 				<script type="text/javascript">getSponsors();</script>
 
+				<!-- ACHIEVEMENT #7: FREQUENT -->
+				<button class="accordion"><span id ="7">>></span> Frequent Visitor [<span id="freqAchievements"></span>/5]</button>
+				<div class="panel freq">
+					<!-- Visit index.html 100x -->
+					<div class="box" id = "7.1">
+						<h1 class="topic">Visit <a href="../index.html">[texastasa.com]</a> 50 Times<span style="font-weight: normal; font-size: 20px; float: right;">(TASA Home Page)</span></h1>
+						<p class="status">Visits: <script type="text/javascript">getHome();</script></p>
+					</div>
+					<!-- Early Riser -->
+					<div class="box" id = "7.2">
+						<h1 class="topic">Early Riser<span style="font-weight: normal; font-size: 20px; float: right;">(Visit Home Page between 5am - 8am)</span></h1>
+						<p class="status">Bright and Early: <span id = "morning">not right now!</span></p>
+					</div>
+					<!-- Night Owl -->
+					<div class="box" id = "7.3">
+						<h1 class="topic">Night Owl<span style="font-weight: normal; font-size: 20px; float: right;">(Visit Home Page between 2am - 5am)</span></h1>
+						<p class="status">Go to Sleep: <span id = "night">not right now!</span></p>
+					</div>
+					<!-- Where is GM -->
+					<div class="box" id = "7.4">
+						<h1 class="topic">Where is GM again?<span style="font-weight: normal; font-size: 20px; float: right;">(Visit 6pm -7pm on a Wednesday)</span></h1>
+						<p class="status">Last Minute: <span id = "gm">not right now!</span></p>
+					</div>
+					<!-- 7 days a week -->
+					<div class="box" id = "7.5">
+						<h1 class="topic">Daily Duty<span style="font-weight: normal; font-size: 20px; float: right;">(Visit Home Page 7 Days in a Row)</span></h1>
+						<p class="status">Current Streak: <span id = "days"></span></p>
+					</div>
+					<script type="text/javascript">getTimes();</script>
+				</div>
+
 				<!-- ACHIEVEMENT #1: CLICKS -->
 				<button class="accordion"><span id ="1">>></span> Clicker Happy [<span id="clickAchievements"></span>/5]</button>
 				<div class="panel clicks">
@@ -268,6 +299,47 @@ div.panel {
 					<div class="box" id = "2.5">
 						<h1 class="topic">Visit 500 Pages</h1>
 						<p class="status"><script type="text/javascript">getVisits();</script></p>
+					</div>
+				</div>
+
+				<!-- ACHIEVEMENT #8: SECRETS -->
+				<button class="accordion"><span id = "8">>></span> TASA Secrets [<span id="secretsAchievements"></span>/1]</button>
+				<div class="panel secrets">
+					<!-- Secret Game -->
+					<div class="box" id = "8.1">
+					<h1 class="topic">There's a secret lurking around <span onclick="recordSecret();"><a href="http://texastasa.com/hidden/space.html">here</a></span>...</h1>
+						<p class="status">Secret: <script type="text/javascript">getSecret();</script></p>
+					</div>
+				</div>
+
+				<!-- ACHIEVEMENT #9: ACHIEVEMENT HUNTER -->
+				<script type="text/javascript">recordAchievement();</script>
+				<button class="accordion"><span id = "9">>></span> Achievement Seeker [<span id="achieveAchievements"></span>/5]</button>
+				<div class="panel total">
+					<!-- Achievement List x50 -->
+					<div class="box" id = "9.1">
+					<h1 class="topic">Check your Achievement List 50 Times</h1>
+						<p class="status">Total Refresh Count: <script type="text/javascript">getAchievement();</script></p>
+					</div>
+					<!-- 5 Achievements -->
+					<div class="box" id = "9.2">
+					<h1 class="topic">Collect 5 Achievements</h1>
+						<p class="status">Achievements: <span id="achievements5"></span></p>
+					</div>
+					<!-- 10 Achievements -->
+					<div class="box" id = "9.3">
+					<h1 class="topic">Collect 10 Achievements</h1>
+						<p class="status">Achievements: <span id="achievements10"></span></p>
+					</div>
+					<!-- 20 Achievements -->
+					<div class="box" id = "9.4">
+					<h1 class="topic">Collect 20 Achievements</h1>
+						<p class="status">Achievements: <span id="achievements20"></span></p>
+					</div>
+					<!-- 30 Achievements -->
+					<div class="box" id = "9.5">
+					<h1 class="topic">Collect 30 Achievements</h1>
+						<p class="status">Achievements: <span id="achievements30"></span></p>
 					</div>
 				</div>
 			</div>

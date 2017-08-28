@@ -4,6 +4,8 @@ function recordClick() {
 	/* Updates "clicks" cookie
 	/* Updates trackers on achievement.html
 	/* Checks for achievement completion & updates accordingly
+	/* Updates IDs: current, clicks clicks10 - clicks1000, 1 1.1 - 1.5, clickAchievements, achievements5 - achievements30, 9 9.2 - 9.5
+	/* It's honestly a REALLY messy function but I don't want to go back and make sub-functions out of everything :/ (sorry, but it works!)
 	*/
 
 	var numclicks = getCookie("clicks");
@@ -23,15 +25,172 @@ function recordClick() {
 		document.getElementById("clicks500").innerHTML = numclicks;
 		document.getElementById("clicks1000").innerHTML = numclicks;
 
-		if(numclicks >= 10){ document.getElementById("1.1").classList.add("complete"); document.getElementById("clickAchievements").innerHTML = 1;}
-		if(numclicks >= 50){ document.getElementById("1.2").classList.add("complete"); document.getElementById("clickAchievements").innerHTML = 2;}
-		if(numclicks >= 100){ document.getElementById("1.3").classList.add("complete"); document.getElementById("clickAchievements").innerHTML = 3;}
-		if(numclicks >= 500){ document.getElementById("1.4").classList.add("complete"); document.getElementById("clickAchievements").innerHTML = 4;}
+		if(numclicks >= 10){ 
+			document.getElementById("1.1").classList.add("complete"); 
+			document.getElementById("clickAchievements").innerHTML = 1;
+			if(numclicks == 10) {
+				document.getElementById("current").innerHTML = parseInt(document.getElementById("current").innerHTML) + 1;
+
+				document.getElementById("achievements5").innerHTML = parseInt(document.getElementById("achievements5").innerHTML) + 1;
+				document.getElementById("achievements10").innerHTML = parseInt(document.getElementById("achievements10").innerHTML) + 1;
+				document.getElementById("achievements20").innerHTML = parseInt(document.getElementById("achievements20").innerHTML) + 1;
+				document.getElementById("achievements30").innerHTML = parseInt(document.getElementById("achievements30").innerHTML) + 1;
+
+				if(document.getElementById("current").innerHTML == 5) { 
+					document.getElementById("9.2").classList.add("complete");
+					document.getElementById("achieveAchievements").innerHTML = parseInt(document.getElementById("achieveAchievements").innerHTML) + 1;
+				}
+				if(document.getElementById("current").innerHTML == 10) { 
+					document.getElementById("9.3").classList.add("complete"); 
+					document.getElementById("achieveAchievements").innerHTML = parseInt(document.getElementById("achieveAchievements").innerHTML) + 1;
+				}
+				if(document.getElementById("current").innerHTML == 20) { 
+					document.getElementById("9.4").classList.add("complete");
+					document.getElementById("achieveAchievements").innerHTML = parseInt(document.getElementById("achieveAchievements").innerHTML) + 1;
+				}
+				if(document.getElementById("current").innerHTML == 30) { 
+					document.getElementById("9.5").classList.add("complete");
+					document.getElementById("achieveAchievements").innerHTML = parseInt(document.getElementById("achieveAchievements").innerHTML) + 1;
+					if(document.getElementById("achieveAchievements").innerHTML == 5) {
+						document.getElementById("9").innerHTML = "&#10003;";
+						document.getElementById("9").classList.add("checkmark");
+					}
+				}
+			}
+		}
+		if(numclicks >= 50){ 
+			document.getElementById("1.2").classList.add("complete"); 
+			document.getElementById("clickAchievements").innerHTML = 2;
+			if(numclicks == 50) {
+				document.getElementById("current").innerHTML = parseInt(document.getElementById("current").innerHTML) + 1;
+
+				document.getElementById("achievements5").innerHTML = parseInt(document.getElementById("achievements5").innerHTML) + 1;
+				document.getElementById("achievements10").innerHTML = parseInt(document.getElementById("achievements10").innerHTML) + 1;
+				document.getElementById("achievements20").innerHTML = parseInt(document.getElementById("achievements20").innerHTML) + 1;
+				document.getElementById("achievements30").innerHTML = parseInt(document.getElementById("achievements30").innerHTML) + 1;
+
+				if(document.getElementById("current").innerHTML == 5) { 
+					document.getElementById("9.2").classList.add("complete");
+					document.getElementById("achieveAchievements").innerHTML = parseInt(document.getElementById("achieveAchievements").innerHTML) + 1;
+				}
+				if(document.getElementById("current").innerHTML == 10) { 
+					document.getElementById("9.3").classList.add("complete"); 
+					document.getElementById("achieveAchievements").innerHTML = parseInt(document.getElementById("achieveAchievements").innerHTML) + 1;
+				}
+				if(document.getElementById("current").innerHTML == 20) { 
+					document.getElementById("9.4").classList.add("complete");
+					document.getElementById("achieveAchievements").innerHTML = parseInt(document.getElementById("achieveAchievements").innerHTML) + 1;
+				}
+				if(document.getElementById("current").innerHTML == 30) { 
+					document.getElementById("9.5").classList.add("complete");
+					document.getElementById("achieveAchievements").innerHTML = parseInt(document.getElementById("achieveAchievements").innerHTML) + 1;
+					if(document.getElementById("achieveAchievements").innerHTML == 5) {
+						document.getElementById("9").innerHTML = "&#10003;";
+						document.getElementById("9").classList.add("checkmark");
+					}
+				}
+			}			
+		}
+		if(numclicks >= 100){ 
+			document.getElementById("1.3").classList.add("complete"); 
+			document.getElementById("clickAchievements").innerHTML = 3;
+			if(numclicks == 100) {
+				document.getElementById("current").innerHTML = parseInt(document.getElementById("current").innerHTML) + 1;
+
+				document.getElementById("achievements5").innerHTML = parseInt(document.getElementById("achievements5").innerHTML) + 1;
+				document.getElementById("achievements10").innerHTML = parseInt(document.getElementById("achievements10").innerHTML) + 1;
+				document.getElementById("achievements20").innerHTML = parseInt(document.getElementById("achievements20").innerHTML) + 1;
+				document.getElementById("achievements30").innerHTML = parseInt(document.getElementById("achievements30").innerHTML) + 1;
+
+				if(document.getElementById("current").innerHTML == 5) { 
+					document.getElementById("9.2").classList.add("complete");
+					document.getElementById("achieveAchievements").innerHTML = parseInt(document.getElementById("achieveAchievements").innerHTML) + 1;
+				}
+				if(document.getElementById("current").innerHTML == 10) { 
+					document.getElementById("9.3").classList.add("complete"); 
+					document.getElementById("achieveAchievements").innerHTML = parseInt(document.getElementById("achieveAchievements").innerHTML) + 1;
+				}
+				if(document.getElementById("current").innerHTML == 20) { 
+					document.getElementById("9.4").classList.add("complete");
+					document.getElementById("achieveAchievements").innerHTML = parseInt(document.getElementById("achieveAchievements").innerHTML) + 1;
+				}
+				if(document.getElementById("current").innerHTML == 30) { 
+					document.getElementById("9.5").classList.add("complete");
+					document.getElementById("achieveAchievements").innerHTML = parseInt(document.getElementById("achieveAchievements").innerHTML) + 1;
+					if(document.getElementById("achieveAchievements").innerHTML == 5) {
+						document.getElementById("9").innerHTML = "&#10003;";
+						document.getElementById("9").classList.add("checkmark");
+					}
+				}
+			}
+		}
+		if(numclicks >= 500){ 
+			document.getElementById("1.4").classList.add("complete"); 
+			document.getElementById("clickAchievements").innerHTML = 4;
+			if(numclicks == 500) {
+				document.getElementById("current").innerHTML = parseInt(document.getElementById("current").innerHTML) + 1;
+
+				document.getElementById("achievements5").innerHTML = parseInt(document.getElementById("achievements5").innerHTML) + 1;
+				document.getElementById("achievements10").innerHTML = parseInt(document.getElementById("achievements10").innerHTML) + 1;
+				document.getElementById("achievements20").innerHTML = parseInt(document.getElementById("achievements20").innerHTML) + 1;
+				document.getElementById("achievements30").innerHTML = parseInt(document.getElementById("achievements30").innerHTML) + 1;
+
+				if(document.getElementById("current").innerHTML == 5) { 
+					document.getElementById("9.2").classList.add("complete");
+					document.getElementById("achieveAchievements").innerHTML = parseInt(document.getElementById("achieveAchievements").innerHTML) + 1;
+				}
+				if(document.getElementById("current").innerHTML == 10) { 
+					document.getElementById("9.3").classList.add("complete"); 
+					document.getElementById("achieveAchievements").innerHTML = parseInt(document.getElementById("achieveAchievements").innerHTML) + 1;
+				}
+				if(document.getElementById("current").innerHTML == 20) { 
+					document.getElementById("9.4").classList.add("complete");
+					document.getElementById("achieveAchievements").innerHTML = parseInt(document.getElementById("achieveAchievements").innerHTML) + 1;
+				}
+				if(document.getElementById("current").innerHTML == 30) { 
+					document.getElementById("9.5").classList.add("complete");
+					document.getElementById("achieveAchievements").innerHTML = parseInt(document.getElementById("achieveAchievements").innerHTML) + 1;
+					if(document.getElementById("achieveAchievements").innerHTML == 5) {
+						document.getElementById("9").innerHTML = "&#10003;";
+						document.getElementById("9").classList.add("checkmark");
+					}
+				}
+			}
+		}
 		if(numclicks >= 1000){ 
 			document.getElementById("1.5").classList.add("complete");
 			document.getElementById("clickAchievements").innerHTML = 5;
 			document.getElementById("1").innerHTML = "&#10003;";
 			document.getElementById("1").classList.add("checkmark");
+			if(numclicks == 50) {
+				document.getElementById("current").innerHTML = parseInt(document.getElementById("current").innerHTML) + 1;
+
+				document.getElementById("achievements5").innerHTML = parseInt(document.getElementById("achievements5").innerHTML) + 1;
+				document.getElementById("achievements10").innerHTML = parseInt(document.getElementById("achievements10").innerHTML) + 1;
+				document.getElementById("achievements20").innerHTML = parseInt(document.getElementById("achievements20").innerHTML) + 1;
+				document.getElementById("achievements30").innerHTML = parseInt(document.getElementById("achievements30").innerHTML) + 1;
+
+				if(document.getElementById("current").innerHTML == 5) { 
+					document.getElementById("9.2").classList.add("complete");
+					document.getElementById("achieveAchievements").innerHTML = parseInt(document.getElementById("achieveAchievements").innerHTML) + 1;
+				}
+				if(document.getElementById("current").innerHTML == 10) { 
+					document.getElementById("9.3").classList.add("complete"); 
+					document.getElementById("achieveAchievements").innerHTML = parseInt(document.getElementById("achieveAchievements").innerHTML) + 1;
+				}
+				if(document.getElementById("current").innerHTML == 20) { 
+					document.getElementById("9.4").classList.add("complete");
+					document.getElementById("achieveAchievements").innerHTML = parseInt(document.getElementById("achieveAchievements").innerHTML) + 1;
+				}
+				if(document.getElementById("current").innerHTML == 30) { 
+					document.getElementById("9.5").classList.add("complete");
+					document.getElementById("achieveAchievements").innerHTML = parseInt(document.getElementById("achieveAchievements").innerHTML) + 1;
+					if(document.getElementById("achieveAchievements").innerHTML == 5) {
+						document.getElementById("9").innerHTML = "&#10003;";
+						document.getElementById("9").classList.add("checkmark");
+					}
+				}
+			}
 		}
 	}
 	setCookie("clicks", numclicks, expdate, "/");
@@ -257,6 +416,10 @@ function getMedia() {
 }
 
 function recordITASA() {
+	/* Called within innerHTML upon href click:
+	/* <script type="text/javascript">recordITASA();</script>
+	/* Creates/Updates itasa cookie with value "true"
+	*/
 	var status = true;
 	var expdate = new Date ();
 	expdate.setTime (expdate.getTime() + (24 * 60 * 60 * 1000*365));
@@ -264,6 +427,10 @@ function recordITASA() {
 }
 
 function getITASA() {
+	/* Called within innerHTML upon page load:
+	/* <script type="text/javascript">getITASA();</script>
+	/* Displays tracker for ITASA visit on achievement.html
+	*/
 	var status = getCookie("itasa");
 	if(status == ""){
 		document.getElementById("itasa").innerHTML = "not yet...";
@@ -273,6 +440,10 @@ function getITASA() {
 }
 
 function recordSponsors() {
+	/* Called within innerHTML upon page load:
+	/* <script type="text/javascript">recordSponsors();</script>
+	/* Creates/Updates sponsors cookie with value of "true"
+	*/
 	var status = true;
 	var expdate = new Date ();
 	expdate.setTime (expdate.getTime() + (24 * 60 * 60 * 1000*365));
@@ -280,12 +451,143 @@ function recordSponsors() {
 }
 
 function getSponsors() {
+	/* Called within innerHTML upon page load:
+	/* <script type="text/javascript">getSponsors();</script>
+	/* Displays tracker for sponsor.html visit on achievement.html
+	*/
 	var status = getCookie("sponsors");
 	if(status == ""){
 		document.getElementById("sponsors").innerHTML = "not yet...";
 	} else {
 		document.getElementById("sponsors").innerHTML = "Yes!";		
 	}
+}
+
+function recordHome() {
+	/* Called within innerHTML upon page load:
+	/* <script type="text/javascript">recordHome();</script>
+	/* Counts home visits with homeCount cookie
+	*/
+	var value = getCookie("homeCount");
+	var expdate = new Date ();
+	expdate.setTime (expdate.getTime() + (24 * 60 * 60 * 1000*365));
+
+	if (!value) { 
+		value = 1;
+	} else {
+		value = parseInt(value) + 1;
+	}
+	setCookie("homeCount", value, expdate, "/");
+}
+
+function getHome() {
+	/* Called within innerHTML upon page load:
+	/* <script type="text/javascript">getHome();</script>
+	/* Displays homeCount cookie on achievement.html
+	*/
+	var counter = getCookie("homeCount");
+	if(counter == ""){
+		document.write(0);
+	} else {
+		document.write(counter);
+	}
+}
+
+function recordTimes() {
+	var status = true;
+	var expdate = new Date ();
+	expdate.setTime (expdate.getTime() + (24 * 60 * 60 * 1000*365));
+
+	var d = new Date();
+	var hour = d.getHours();
+	var day = d.getDay();
+
+	if ((hour >= 2) && (hour <= 4)) {
+		setCookie("night", status, expdate, "/");
+	} else if ((hour >=5) && (hour <= 8)) {
+		setCookie("morning", status, expdate, "/");
+	} else if ((hour == 18) && (day == 3)) {
+		setCookie("gm", status, expdate, "/");
+	}
+	var streak = getCookie("days");
+	var yesterday = getCookie("yesterday");
+
+	var check = day;
+	if(check == 0){ check = 7; } //allows for easy check with yesterday in "else if" down below.
+
+
+	if(!streak || !yesterday) {
+		setCookie("days", 1, expdate, "/");
+	} else if(yesterday == (check - 1)) {
+		streak = parseInt(streak) + 1;
+		setCookie("days", streak, expdate, "/");
+		if(streak >= 7) { setCookie("streakComplete", status, expdate, "/"); }
+	} else if(yesterday != day) {
+		setCookie("days", 1, expdate, "/");
+	}
+	setCookie("yesterday", day, expdate, "/");
+}
+
+function getTimes() {
+	var d = new Date();
+	var hour = d.getHours();
+	var day = d.getDay();
+	if((hour >= 2) && (hour <= 4)) {
+		document.getElementById("night").innerHTML = "It's Late!";
+	} else if ((hour >=5) && (hour <= 8)) {
+		document.getElementById("morning").innerHTML = "Good Morning!";
+	} else if ((hour == 18) && (day == 3)) {
+		document.getElementById("gm").innerHTML = "Don't Be Late!";
+	}
+	var streak = getCookie("days");
+	if(!streak){
+		document.getElementById("days").innerHTML = 0;
+	} else {
+		document.getElementById("days").innerHTML = streak;		
+	}
+}
+
+function recordSecret() {
+	var status = true;
+	var expdate = new Date ();
+	expdate.setTime (expdate.getTime() + (24 * 60 * 60 * 1000*365));
+	setCookie("secret", status, expdate, "/");
+}
+
+function getSecret() {
+	var status = getCookie("secret");
+	if(status == ""){
+		document.write("hidden");
+	} else {
+		document.write("Discovered!<span style='float: right;'>...Too bad it only works on browser, at ~75% zoom :/</span>");
+	}
+}
+
+function recordAchievement() {
+	var visits = getCookie("achieve");
+	var status = true;
+	var expdate = new Date ();
+	expdate.setTime (expdate.getTime() + (24 * 60 * 60 * 1000*365));
+
+	if (!visits) { 
+		visits = 1;
+	} else {
+		visits = parseInt(visits) + 1;
+	}
+
+	setCookie("achieve", visits, expdate, "/");
+}
+
+function getAchievement() {
+	var count = getCookie("achieve");
+	document.write(count);
+}
+
+function writeAchievements(x) {
+	document.getElementById("achievements5").innerHTML = x;
+	document.getElementById("achievements10").innerHTML = x;
+	document.getElementById("achievements20").innerHTML = x;	
+	document.getElementById("achievements30").innerHTML = x;
 }
 
 function checkCompleted(){
@@ -296,6 +598,7 @@ function checkCompleted(){
 	/* Uses Numerical ID's to find elements (ex. 3.1 corresponds to category 3, element 1)
 	*/
 	var myID;
+	var totalcount = 0;
 	//Clicks
 	var checkpoint = 0;
 	var cval = getCookie("clicks");
@@ -314,6 +617,7 @@ function checkCompleted(){
 		document.getElementById("1").classList.add("checkmark");
 	}
 	document.getElementById("clickAchievements").innerHTML = checkpoint;
+	totalcount = totalcount + checkpoint;
 	
 	//Visits
 	checkpoint = 0;
@@ -333,6 +637,7 @@ function checkCompleted(){
 		document.getElementById("2").classList.add("checkmark");
 	}
 	document.getElementById("visitsAchievements").innerHTML = checkpoint;
+	totalcount = totalcount + checkpoint;
 
 	//Tabs
 	checkpoint = 0;
@@ -358,6 +663,7 @@ function checkCompleted(){
 		document.getElementById("3").classList.add("checkmark");
 	}
 	document.getElementById("tabsAchievements").innerHTML = checkpoint;
+	totalcount = totalcount + checkpoint;
 
 	//Aspire
 	checkpoint = 0;
@@ -383,6 +689,7 @@ function checkCompleted(){
 		document.getElementById("4").classList.add("checkmark");
 	}
 	document.getElementById("aspireAchievements").innerHTML = checkpoint;
+	totalcount = totalcount + checkpoint;
 
 	//Social Media
 	checkpoint = 0;
@@ -403,6 +710,7 @@ function checkCompleted(){
 		document.getElementById("5").classList.add("checkmark");
 	}
 	document.getElementById("socialAchievements").innerHTML = checkpoint;
+	totalcount = totalcount + checkpoint;
 
 	//Appreciation
 	checkpoint = 0;
@@ -419,4 +727,64 @@ function checkCompleted(){
 		document.getElementById("6").classList.add("checkmark");
 	}
 	document.getElementById("appreciationAchievements").innerHTML = checkpoint;
+	totalcount = totalcount + checkpoint;
+
+	//Frequent
+	checkpoint = 0;
+	cval = getCookie("homeCount");
+	if(cval >= 50) { document.getElementById("7.1").classList.add("complete"); checkpoint ++;}
+	cval = getCookie("morning");
+	if(cval != "") { document.getElementById("7.2").classList.add("complete"); checkpoint ++;}
+	cval = getCookie("night");
+	if(cval != "") { document.getElementById("7.3").classList.add("complete"); checkpoint ++;}
+	cval = getCookie("gm");
+	if(cval != "") { document.getElementById("7.4").classList.add("complete"); checkpoint ++;}
+	cval = getCookie("streakComplete");
+	if(cval != "") { document.getElementById("7.5").classList.add("complete"); checkpoint ++;}
+	if(checkpoint < 5) {
+		myID = document.getElementsByClassName("panel freq");
+		myID[0].style.display = "block";
+		myID[0].style.opacity = "1";
+	} else {
+		document.getElementById("7").innerHTML = "&#10003;";
+		document.getElementById("7").classList.add("checkmark");
+	}
+	document.getElementById("freqAchievements").innerHTML = checkpoint;
+	totalcount = totalcount + checkpoint;
+
+	//Secret
+	checkpoint = 0;
+	cval = getCookie("secret");
+	if(cval != "") { document.getElementById("8.1").classList.add("complete"); checkpoint ++;}
+	if(checkpoint < 1) {
+		myID = document.getElementsByClassName("panel secrets");
+		myID[0].style.display = "block";
+		myID[0].style.opacity = "1";
+	} else {
+		document.getElementById("8").innerHTML = "&#10003;";
+		document.getElementById("8").classList.add("checkmark");
+	}
+	document.getElementById("secretsAchievements").innerHTML = checkpoint;
+	totalcount = totalcount + checkpoint;
+
+	//Achievements (must be last)
+	checkpoint = 0;
+	cval = getCookie("achieve");
+	if(cval >= 50) { document.getElementById("9.1").classList.add("complete"); checkpoint ++; totalcount++;}
+	if(totalcount >= 5) { document.getElementById("9.2").classList.add("complete"); checkpoint++; totalcount++;}
+	if(totalcount >= 10) { document.getElementById("9.3").classList.add("complete"); checkpoint++; totalcount++;}
+	if(totalcount >= 20) { document.getElementById("9.4").classList.add("complete"); checkpoint++; totalcount++;}
+	if(totalcount >= 30) { document.getElementById("9.5").classList.add("complete"); checkpoint++; totalcount++;}
+
+	if(checkpoint < 5) {
+		myID = document.getElementsByClassName("panel total");
+		myID[0].style.display = "block";
+		myID[0].style.opacity = "1";
+	} else {
+		document.getElementById("9").innerHTML = "&#10003;";
+		document.getElementById("9").classList.add("checkmark");
+	}
+	document.getElementById("achieveAchievements").innerHTML = checkpoint;
+	document.getElementById("current").innerHTML = totalcount;
+	writeAchievements(totalcount);
 }
