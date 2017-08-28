@@ -30,7 +30,7 @@ function recordClick() {
 		if(numclicks >= 1000){ 
 			document.getElementById("1.5").classList.add("complete");
 			document.getElementById("clickAchievements").innerHTML = 5;
-			document.getElementById("1").innerHTML = "&#128504;";
+			document.getElementById("1").innerHTML = "&#10003;";
 			document.getElementById("1").classList.add("checkmark");
 		}
 	}
@@ -178,6 +178,10 @@ function recordApply() {
 }
 
 function getApply() {
+	/* Called within innerHTML upon page load:
+	/* <script type="text/javascript">getApply();</script>
+	/* Displays all trackers on achievement.html
+	*/
 	var apply = getCookie("applyTab");
 	if (apply == "") { 
 		document.getElementById("applyTab").innerHTML = "incomplete";
@@ -199,6 +203,10 @@ function recordOfficer(x) {
 }
 
 function getOfficers() {
+	/* Called within innerHTML upon page load:
+	/* <script type="text/javascript">getOfficers();</script>
+	/* Displays tracker for officer count on achievement.html
+	*/
 	var officers = 0;
 	var x = "A";
 	var cookie;
@@ -208,6 +216,76 @@ function getOfficers() {
 		x = String.fromCharCode(x.charCodeAt(0) + 1);
 	}
 	document.getElementById("officerCount").innerHTML = officers;
+}
+
+function recordMedia(x) {
+	/* Called within innerHTML upon page load:
+	/* <script type="text/javascript">recordMedia([two char input - lowercase, for social media type]);</script>
+	/* On click, triggers update of corresponding cookie with string "true";
+	/* Input corresponds to letter assigned to each officer position.
+	/* INSTEAD OF USING <a href=""></a>, the page is redirected using this function to allow for mobile compliance
+	*/
+	var mediax = true;
+	var expdate = new Date ();
+	expdate.setTime (expdate.getTime() + (24 * 60 * 60 * 1000*365));
+	setCookie("media" + x, mediax, expdate, "/");
+	if(location.pathname.substring(location.pathname.lastIndexOf("/") + 1) == "achievements.html"){
+		if(x == "fb"){ window.location.href = "https://www.facebook.com/texastasa"; }
+		if(x == "ig"){ window.location.href = "http://instagram.com/uttasa"; }
+		if(x == "yt"){ window.location.href = "http://www.youtube.com/channel/UC4tZCO4Es9JZaL4bm9lQPEw"; }
+		if(x == "tw"){ window.location.href = "https://twitter.com/uttasa" }
+	}
+}
+
+function getMedia() {
+	/* Called within innerHTML upon page load:
+	/* <script type="text/javascript">getMedia();</script>
+	/* Displays all trackers on achievement.html
+	*/
+	var fb = getCookie("mediafb");
+	var ig = getCookie("mediaig");
+	var yt = getCookie("mediayt");
+	var tw = getCookie("mediatw");
+	if(fb == ""){ document.getElementById("FB").innerHTML = "Connect using the icon below!"; }
+	else { document.getElementById("FB").innerHTML = "Nice work!"; }
+	if(ig == ""){ document.getElementById("IG").innerHTML = "Connect using the icon below!"; }
+	else { document.getElementById("IG").innerHTML = "Nice work!"; }
+	if(yt == ""){ document.getElementById("YT").innerHTML = "Connect using the icon below!"; }
+	else { document.getElementById("YT").innerHTML = "Nice work!"; }
+	if(tw == ""){ document.getElementById("TW").innerHTML = "Connect using the icon below!"; }
+	else { document.getElementById("TW").innerHTML = "Nice work!"; }
+}
+
+function recordITASA() {
+	var status = true;
+	var expdate = new Date ();
+	expdate.setTime (expdate.getTime() + (24 * 60 * 60 * 1000*365));
+	setCookie("itasa", status, expdate, "/");
+}
+
+function getITASA() {
+	var status = getCookie("itasa");
+	if(status == ""){
+		document.getElementById("itasa").innerHTML = "not yet...";
+	} else {
+		document.getElementById("itasa").innerHTML = "Yes!";
+	}
+}
+
+function recordSponsors() {
+	var status = true;
+	var expdate = new Date ();
+	expdate.setTime (expdate.getTime() + (24 * 60 * 60 * 1000*365));
+	setCookie("sponsors", status, expdate, "/");
+}
+
+function getSponsors() {
+	var status = getCookie("sponsors");
+	if(status == ""){
+		document.getElementById("sponsors").innerHTML = "not yet...";
+	} else {
+		document.getElementById("sponsors").innerHTML = "Yes!";		
+	}
 }
 
 function checkCompleted(){
@@ -232,7 +310,7 @@ function checkCompleted(){
 		myID[0].style.display = "block";
 		myID[0].style.opacity = "1";
 	} else {
-		document.getElementById("1").innerHTML = "&#128504;";
+		document.getElementById("1").innerHTML = "&#10003;";
 		document.getElementById("1").classList.add("checkmark");
 	}
 	document.getElementById("clickAchievements").innerHTML = checkpoint;
@@ -251,7 +329,7 @@ function checkCompleted(){
 		myID[0].style.display = "block";
 		myID[0].style.opacity = "1";
 	} else {
-		document.getElementById("2").innerHTML = "&#128504;";
+		document.getElementById("2").innerHTML = "&#10003;";
 		document.getElementById("2").classList.add("checkmark");
 	}
 	document.getElementById("visitsAchievements").innerHTML = checkpoint;
@@ -276,7 +354,7 @@ function checkCompleted(){
 		myID[0].style.display = "block";
 		myID[0].style.opacity = "1";
 	} else {
-		document.getElementById("3").innerHTML = "&#128504;";
+		document.getElementById("3").innerHTML = "&#10003;";
 		document.getElementById("3").classList.add("checkmark");
 	}
 	document.getElementById("tabsAchievements").innerHTML = checkpoint;
@@ -301,8 +379,44 @@ function checkCompleted(){
 		myID[0].style.display = "block";
 		myID[0].style.opacity = "1";
 	} else {
-		document.getElementById("4").innerHTML = "&#128504;";
+		document.getElementById("4").innerHTML = "&#10003;";
 		document.getElementById("4").classList.add("checkmark");
 	}
 	document.getElementById("aspireAchievements").innerHTML = checkpoint;
+
+	//Social Media
+	checkpoint = 0;
+	cval = getCookie("mediafb");
+	if(cval != ""){ document.getElementById("5.1").classList.add("complete"); checkpoint ++;}
+	cval = getCookie("mediaig");
+	if(cval != ""){ document.getElementById("5.2").classList.add("complete"); checkpoint ++;}
+	cval = getCookie("mediayt");
+	if(cval != ""){ document.getElementById("5.3").classList.add("complete"); checkpoint ++;}
+	cval = getCookie("mediatw");
+	if(cval != ""){ document.getElementById("5.4").classList.add("complete"); checkpoint ++;}
+	if(checkpoint < 4) {
+		myID = document.getElementsByClassName("panel social");
+		myID[0].style.display = "block";
+		myID[0].style.opacity = "1";
+	} else {
+		document.getElementById("5").innerHTML = "&#10003;";
+		document.getElementById("5").classList.add("checkmark");
+	}
+	document.getElementById("socialAchievements").innerHTML = checkpoint;
+
+	//Appreciation
+	checkpoint = 0;
+	cval = getCookie("itasa");
+	if(cval != ""){ document.getElementById("6.1").classList.add("complete"); checkpoint ++;}
+	cval = getCookie("sponsors");
+	if(cval != ""){ document.getElementById("6.2").classList.add("complete"); checkpoint ++;}
+	if(checkpoint < 2) {
+		myID = document.getElementsByClassName("panel appreciation");
+		myID[0].style.display = "block";
+		myID[0].style.opacity = "1";
+	} else {
+		document.getElementById("6").innerHTML = "&#10003;";
+		document.getElementById("6").classList.add("checkmark");
+	}
+	document.getElementById("appreciationAchievements").innerHTML = checkpoint;
 }

@@ -96,6 +96,11 @@
 				</div>
 			</div>
 		</div>
+		<div class="thanks" style="font-size: 40px; padding-top: 20px; padding-bottom: 20px">
+			Interested in being a <span class = "emphasize">sponsor</span> for <span class = "emphasize">Texas TASA</span>?<br>
+			<span style="font-size: 20px">Email us at [ut.tasa@gmail.com] or email our president at [tasa.president@gmail.com]</span>
+		</div>
+		<br><br>
 	</div>
 		
 	<!-- FOOTER STARTS HERE -->
@@ -103,17 +108,17 @@
 		<div class="wrap clearfix table">
 			<p class="footer-text">Taiwanese American Students Association 2015-2017</p>
 			<div class="social-icon">
-				<a href="https://twitter.com/uttasa">
-					<img src="../images/logo/twitter.png" alt="Twitter">
-				</a>
 				<a href="https://www.facebook.com/texastasa">
-					<img src="../images/logo/facebook.png" alt="Facebook">
-				</a>
-				<a href="http://www.youtube.com/channel/UC4tZCO4Es9JZaL4bm9lQPEw">
-					<img src="../images/logo/youtube.png" alt="Youtube">
+					<img onclick="recordMedia('fb');" src="../images/logo/facebook.png" alt="Facebook">
 				</a>
 				<a href="http://instagram.com/uttasa">
-					<img src="../images/logo/instagram.png" alt="Instagram">
+					<img onclick="recordMedia('ig');" src="../images/logo/instagram.png" alt="Instagram">
+				</a>
+				<a href="http://www.youtube.com/channel/UC4tZCO4Es9JZaL4bm9lQPEw">
+					<img onclick="recordMedia('yt');" src="../images/logo/youtube.png" alt="Youtube">
+				</a>
+				<a href="https://twitter.com/uttasa">
+					<img onclick="recordMedia('tw');" src="../images/logo/twitter.png" alt="Twitter">
 				</a>
 			</div>
 		</div>
@@ -129,6 +134,8 @@
 		document.getElementsByTagName("body")[0].onclick = recordClick;
 		//Record Page Visit!
 		recordVisit();
+		//Record Sponsor Visit!
+		recordSponsors();
 	}
 </script>
 </html>

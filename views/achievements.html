@@ -163,6 +163,49 @@ div.panel {
 				<script type="text/javascript">getOfficers();</script>
 				<script type="text/javascript">getApply();</script>
 
+				<!-- ACHIEVEMENT #5: SOCIAL MEDIA -->
+				<button class="accordion"><span id ="5">>></span> Socially Connected [<span id="socialAchievements"></span>/4]</button>
+				<div class="panel social">
+					<!-- FB Page -->
+					<div class="box" id = "5.1">
+						<h1 class="topic">Visit TASA's Facebook Page!</h1>
+						<p class="status"><span id = "FB"></span></p>
+					</div>
+					<!-- IG Page -->
+					<div class="box" id = "5.2">
+						<h1 class="topic">Visit TASA's Instagram Page!</h1>
+						<p class="status"><span id = "IG"></span></p>
+					</div>
+					<!-- YT Page -->
+					<div class="box" id = "5.3">
+						<h1 class="topic">Visit TASA's Youtube Page!</h1>
+						<p class="status"><span id = "YT"></span></p>
+					</div>
+					<!-- TW Page -->
+					<div class="box" id = "5.4">
+						<h1 class="topic">Visit TASA's Twitter Page!</h1>
+						<p class="status"><span id = "TW"></span></p>
+					</div>
+				</div>
+				<script type="text/javascript">getMedia();</script>
+
+				<!-- ACHIEVEMENT #6: APPRECIATION -->
+				<button class="accordion"><span id ="6">>></span> Showing Appreciation [<span id="appreciationAchievements"></span>/2]</button>
+				<div class="panel appreciation">
+					<!-- Visit ITASA -->
+					<div class="box" id = "6.1">
+						<h1 class="topic">Find a link to ITASA's Website</h1>
+						<p class="status">Found: <span id = "itasa"></span></p>
+					</div>
+					<!-- Sponsors -->
+					<div class="box" id = "6.2">
+						<h1 class="topic">Find a list of TASA's Sponsors!</h1>
+						<p class="status">Found: <span id = "sponsors"></span></p>
+					</div>
+				</div>
+				<script type="text/javascript">getITASA();</script>
+				<script type="text/javascript">getSponsors();</script>
+
 				<!-- ACHIEVEMENT #1: CLICKS -->
 				<button class="accordion"><span id ="1">>></span> Clicker Happy [<span id="clickAchievements"></span>/5]</button>
 				<div class="panel clicks">
@@ -237,18 +280,10 @@ div.panel {
 			<div class="wrap clearfix table">
 				<p class="footer-text">Taiwanese American Students Association 2015-2017</p>
 				<div class="social-icon">
-					<a href="https://twitter.com/uttasa">
-						<img src="../images/logo/twitter.png" alt="Twitter">
-					</a>
-					<a href="https://www.facebook.com/texastasa">
-						<img src="../images/logo/facebook.png" alt="Facebook">
-					</a>
-					<a href="http://www.youtube.com/channel/UC4tZCO4Es9JZaL4bm9lQPEw">
-						<img src="../images/logo/youtube.png" alt="Youtube">
-					</a>
-					<a href="http://instagram.com/uttasa">
-						<img src="../images/logo/instagram.png" alt="Instagram">
-					</a>
+					<img style="cursor: pointer" onclick="recordMedia('fb');" src="../images/logo/facebook.png" alt="Facebook">
+					<img style="cursor: pointer" onclick="recordMedia('ig');" src="../images/logo/instagram.png" alt="Instagram">
+					<img style="cursor: pointer" onclick="recordMedia('yt');" src="../images/logo/youtube.png" alt="Youtube">
+					<img style="cursor: pointer" onclick="recordMedia('tw');" src="../images/logo/twitter.png" alt="Twitter">
 				</div>
 			</div>
 		</footer>
