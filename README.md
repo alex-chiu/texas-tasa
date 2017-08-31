@@ -11,6 +11,8 @@ www.texastasa.com
 
 **Get To Know Us** - Learn who we are and what we're about.
 
+**Achievements Page** - A built-in tracker that tests if you can earn them all.
+
 ## Licence
 MIT
 
