@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>TASA Secrets | SpaceShooter</title>
+  <link rel="stylesheet" href="../public/global.css">
+  <link rel="shortcut icon" href="../public/favicon.ico">
+  <link rel="stylesheet" href="TemplateData/style.css">
+
+
+  <!-- RECORD USER ACHIEVEMENTS -->
+  <script src="../js/Achievements/trackers.js"></script>
+  <script src="../js/Achievements/cookies.js"></script>
+
+  <script src="TemplateData/UnityProgress.js"></script>  
+  <script src="Build/UnityLoader.js"></script>
+  <script>
+    var gameInstance = UnityLoader.instantiate("gameContainer", "Build/Space_Shooter.json", {onProgress: UnityProgress});
+  </script>
+</head>
+<body>
+  <div class="main-container" id="space">
+
+    <!-- HEADER STARTS HERE -->
+    <header>
+      <div class="wrap clearfix">
+        <a id="logo" href="/">
+          <img src="../images/logo/logo_inverse_2015.png" width="48px" height="48px">
+          <span class="highlight">Taiwanese <span class="white">American</span> Students <span class="white">Association</span> </span>
+        </a>
+        <ul class="main-nav">
+          <li><a class="nav-item" href="../views/about.html">About</a></li>
+          <li><a class="nav-item" href="../views/calendar.html">Calendar</a></li>
+          <li><a class="nav-item" href="../views/events.html">Events</a></li>
+        <!--<li><a class="nav-item" href="../views/alumni.html">Alumni</a></li>-->
+          <li><a class="nav-item" href="../views/family.html">Family</a></li>
+          <li><a class="nav-item" href="../views/food.html">Food</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <br>
+    
+    <div class="webgl-content wrap">
+      <div class="footer">
+        <div style="font-size: 28px; display: inline-block;">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Space Shooter</div>
+        <span class="fullscreen" onclick="gameInstance.SetFullscreen(1)" style="cursor: pointer; margin-left: 36%;"></span>
+      </div>
+      <div id="gameContainer" style="width: 600px; height: 900px; left: 22%; top: 10px"></div>
+    </div>
+    <br><br><br>
+
+    <!-- FOOTER STARTS HERE -->
+    <footer>
+      <div class="wrap clearfix table">
+        <p class="footer-text">Taiwanese American Students Association 2015-2017</p>
+        <div class="social-icon">
+          <img style="cursor: pointer" onclick="recordMedia('fb');" src="../images/logo/facebook.png" alt="Facebook">
+          <img style="cursor: pointer" onclick="recordMedia('ig');" src="../images/logo/instagram.png" alt="Instagram">
+          <img style="cursor: pointer" onclick="recordMedia('yt');" src="../images/logo/youtube.png" alt="Youtube">
+          <img style="cursor: pointer" onclick="recordMedia('tw');" src="../images/logo/twitter.png" alt="Twitter">
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+
+<script>
+  window.onload = function (){
+    //Run My Click Counter!
+    document.getElementsByTagName("body")[0].onclick = recordClick;
+    //Record Page Visit!
+    recordVisit();
+  }
+</script>
+
+
+</html>
