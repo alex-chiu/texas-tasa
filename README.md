@@ -13,7 +13,7 @@ www.texastasa.com (Currently Down)
 
 **Achievements Page** - A built-in tracker that tests if you can earn them all.
 
-## Licence
+## License
 MIT
 
 Contributors:
